@@ -13,3 +13,4 @@ Route::get('buku', [ApibukuController::class, 'index']);
 Route::get('buku/{id}', [ApibukuController::class, 'show']);
 Route::post('buku', [ApibukuController::class, 'store']);
 Route::put('buku/{id}', [ApibukuController::class, 'update']);
+Route::delete('buku/{id}', [ApibukuController::class, 'destroy']);

@@ -124,6 +124,20 @@ class ApibukuController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $dataBuku = buku::find($id);
+        if(empty($dataBuku))
+        {
+            return response()->json([
+                'status' => false,
+                'message' => 'data tidak ditemukan'
+            ], 404);
+        }
+
+        $post = $dataBuku->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'data berhasil dihapus'
+        ]);
     }
 }
